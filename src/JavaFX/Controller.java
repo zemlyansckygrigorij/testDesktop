@@ -1,6 +1,7 @@
-package sample;
+package JavaFX;
 
 import javafx.scene.control.*;
+import Connection.ConnectionClass;
 
 public class Controller {
     public DatePicker dataPicker;
@@ -19,6 +20,7 @@ public class Controller {
 
 
     public void sendData(){
+        ConnectionClass connectionClass = new ConnectionClass();
         labelDescription.setText(descriptionTextArea.getText());
     }
 }
