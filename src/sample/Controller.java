@@ -19,6 +19,38 @@ public class Controller {
 
 
     public void sendData(){
-
+        labelDescription.setText(descriptionTextArea.getText());
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
