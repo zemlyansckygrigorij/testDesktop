@@ -4,20 +4,15 @@ import Java.Person;
 import Java.Status;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import Connection.ConnectionClass;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.sql.SQLException;
-
+import java.sql.Statement;
 import java.time.LocalDateTime;
+import Connection.ConnectionClass;
 
-
-
-
-
-
-public class Controller {
+public class ControllerListClaims {
     public DatePicker dataPicker;
     public TextField timeTextField;
     public TextField idTextField;
@@ -40,57 +35,27 @@ public class Controller {
     // инициализация приложения
     @FXML
     private void initialize() {
-        //если id не передан то создаем заявку
-        if (idTextField.getText().equals("")) {
-        }
-
-
-        // Получить дату время
-        LocalDateTime dateTime = LocalDateTime.now();
-        // String dateNow = dateTime.toLocalDate().toString();
-        String timeNow = dateTime.toLocalTime().toString().substring(0, 8);
-
-        //вставка текущей даты в поле "Дата заявки"
-        dataPicker.setValue(dateTime.toLocalDate());
-
-        //вставка текущей времени в поле "Время заявки"
-        timeTextField.setText(dateTime.toLocalTime().toString().substring(0, 8));
-
+        String select = "select id_claims,date_time,implementer,sender,status,description from registrationсlaims.personal";
         //получить данные из таблицы personal - сотрудники
-      //  connectionClass = new ConnectionClass();
-       // connection = connectionClass.getConnection();
+
         connection = ConnectionClass.getConnection();
 
-
         try (Statement statement = connection.createStatement()) {
-            String selectPersonal = "select * from registrationсlaims.personal LIMIT 4";
-            ResultSet resultSetPersonal = statement.executeQuery(selectPersonal);
 
-            while (resultSetPersonal.next()) {
-                //создаем обьект -сотрудник
-                Person person = new Person(resultSetPersonal.getInt(1), resultSetPersonal.getString(2));
+            ResultSet resultSet = statement.executeQuery(select);
 
-                //вставка обьекта сотрудник в списки  "Отправитель" и "Исполнитель"
-                implementerTextField.getItems().add(person);
-                senderTextField.getItems().add(person);
+            while(resultSet.next()){
+           System.out.println(resultSet.getString(1));
+
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
 
-        //получить данные из таблицы status - статус заявки
-        try (Statement statement = connection.createStatement()) {
-            String selectStatus = "select * from registrationсlaims.status";
-            ResultSet resultSetStatus = statement.executeQuery(selectStatus);
 
-            while (resultSetStatus.next()) {
-                Status status = new Status(resultSetStatus.getInt(1), resultSetStatus.getString(2));
-                statusTextFiled.getItems().add(status);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
 
 
     }

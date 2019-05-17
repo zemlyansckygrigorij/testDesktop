@@ -43,13 +43,13 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="labelStatus" layoutX="789.0" layoutY="28.0" text="Статус">
+      <Label fx:id="labelStatus" layoutX="789.0" layoutY="28.0" text="Статус заявки">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
       <TextArea fx:id="descriptionTextArea" layoutX="15.0" layoutY="120.0" prefHeight="382.0" prefWidth="925.0" />
-      <ComboBox fx:id="statusTextFiled" layoutX="789.0" layoutY="49.0" prefWidth="150.0" />
+      <ComboBox fx:id="statusTextFiled" layoutX="789.0" layoutY="49.0" prefWidth="150.0" promptText="Выберите статус " />
       <Label fx:id="labelDescription" layoutX="20.0" layoutY="98.0" text="Описание заявки">
          <font>
             <Font size="15.0" />
@@ -60,5 +60,6 @@
             <Font size="15.0" />
          </font>
       </Label>
+      <TextField fx:id="idTextField" editable="false" layoutX="266.0" layoutY="96.0" visible="false" />
    </children>
 </AnchorPane>
