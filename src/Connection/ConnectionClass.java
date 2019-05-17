@@ -6,17 +6,19 @@ import java.sql.SQLException;
 
 public class ConnectionClass {
     Connection connection;
-    private String dbName;
+    private String dbName= "registrationсlaims";
+    private String userName = "root";
+    private String host = "localhost";
+    private String port = "3306";
+    private boolean autoReconnect = true;
+    private boolean useSSL = false;
+    private String password = "uhbujhbq";
+
     public Connection getConnection(){
-        dbName = "registrationсlaims";
-        String userName = "root";
-        String localHost = "localhost:3306";
-        String settingConnect = "?autoReconnect=true&useSSL=false";
-        String password = "uhbujhbq";
+
         try {
             Class.forName("com.mysql.jdbc.Driver");
-
-            connection = DriverManager.getConnection("jdbc:mysql://"+localHost+"/"+dbName+settingConnect , userName, password);
+            connection = DriverManager.getConnection("jdbc:mysql://"+host+":"+port+"/"+dbName+ "?autoReconnect="+autoReconnect+"&useSSL="+useSSL   , userName, password);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {

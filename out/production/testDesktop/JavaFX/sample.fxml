@@ -9,15 +9,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainForm"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFX.Controller">
+<AnchorPane fx:id="mainForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFX.Controller">
    <children>
       <Button fx:id="buttonSend" layoutX="34.0" layoutY="506.0" mnemonicParsing="false" onAction="#sendData" text="Отправить">
 
           <font>
             <Font size="15.0" />
          </font></Button>
-      <DatePicker fx:id="dataPicker" layoutX="225.0" layoutY="49.0" promptText="Выберите дату" />
-      <TextField fx:id="timeTextField" layoutX="21.0" layoutY="46.0" promptText="Введите время">
+      <DatePicker fx:id="dataPicker" editable="false" layoutX="225.0" layoutY="49.0" promptText="Выберите дату" />
+      <TextField fx:id="timeTextField" editable="false" layoutX="21.0" layoutY="46.0" promptText="Введите время">
          <font>
             <Font size="15.0" />
          </font></TextField>
@@ -51,6 +51,11 @@
       <TextArea fx:id="descriptionTextArea" layoutX="15.0" layoutY="120.0" prefHeight="382.0" prefWidth="925.0" />
       <ComboBox fx:id="statusTextFiled" layoutX="789.0" layoutY="49.0" prefWidth="150.0" />
       <Label fx:id="labelDescription" layoutX="20.0" layoutY="98.0" text="Описание заявки">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelMessage" layoutX="194.0" layoutY="90.0" prefHeight="17.0" prefWidth="338.0">
          <font>
             <Font size="15.0" />
          </font>
