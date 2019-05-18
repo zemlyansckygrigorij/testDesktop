@@ -11,7 +11,7 @@
 
 <AnchorPane fx:id="mainForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFX.Controller">
    <children>
-      <Button fx:id="buttonSend" layoutX="34.0" layoutY="506.0" mnemonicParsing="false" onAction="#sendData" text="Отправить">
+      <Button fx:id="buttonSend" layoutX="15.0" layoutY="506.0" mnemonicParsing="false" onAction="#sendData" prefHeight="31.0" prefWidth="130.0" text="Отправить">
 
           <font>
             <Font size="15.0" />
@@ -61,5 +61,10 @@
          </font>
       </Label>
       <TextField fx:id="idTextField" editable="false" layoutX="266.0" layoutY="96.0" visible="false" />
+      <Button fx:id="buttonListClaims" layoutX="150.0" layoutY="506.0" mnemonicParsing="false" onAction="#getListClaims" prefHeight="31.0" prefWidth="130.0" text="Список Заявок">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -3,8 +3,14 @@ package JavaFX;
 import Java.Person;
 import Java.Status;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import Connection.ConnectionClass;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -57,8 +63,8 @@ public class Controller {
         timeTextField.setText(dateTime.toLocalTime().toString().substring(0, 8));
 
         //получить данные из таблицы personal - сотрудники
-      //  connectionClass = new ConnectionClass();
-       // connection = connectionClass.getConnection();
+
+
         connection = ConnectionClass.getConnection();
 
 
@@ -72,12 +78,28 @@ public class Controller {
 
                 //вставка обьекта сотрудник в списки  "Отправитель" и "Исполнитель"
                 implementerTextField.getItems().add(person);
-                senderTextField.getItems().add(person);
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+        //получить данные из таблицы clients - клиенты
+        try (Statement statement = connection.createStatement()) {
+            String selectSender = "select * from registrationсlaims.clients LIMIT 4";
+            ResultSet resultSetSender = statement.executeQuery(selectSender);
+
+            while (resultSetSender.next()) {
+                //создаем обьект -сотрудник
+                Person person = new Person(resultSetSender.getInt(1), resultSetSender.getString(2));
+
+                //вставка обьекта сотрудник в списки  "Отправитель" и "Исполнитель"
+
+                senderTextField.getItems().add(person);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         //получить данные из таблицы status - статус заявки
         try (Statement statement = connection.createStatement()) {
@@ -113,9 +135,6 @@ public class Controller {
 
         //соединение с сервером
         connection = ConnectionClass.getConnection();
-      /*  ConnectionClass connectionClass = new ConnectionClass();
-        Connection connection = connectionClass.getConnection();*/
-
 
 /************ Проверки *************/
         //если описание заявки не введено
@@ -143,27 +162,14 @@ public class Controller {
              return;
         }
 
-
-
         String sql = "insert into claims (date_time,id_implementer,id_sender,id_status,description) values('" +  dateTimeClaim +  "','" + implementer.getId() + "','" + sender.getId() + "','" + status.getId() + "','" + description + "')";
-        //  String sql = "insert into claims (date_time,implementer,sender,id_status,description) values('98-12-21 11:30:44','"+implementer+"','"+sender+"','"+status+"','" + descriptionTextArea.getText() +"')";
 
-
-
-        System.out.println(sql);
         try (Statement statement = connection.createStatement()) {
             statement.executeUpdate(sql);
-            /*ResultSet resultSet = statement.executeQuery(select);
-String select = "select * from registrationсlaims.personal";
-            while(resultSet.next()){
-           System.out.println(resultSet.getString(1));
-
-
-            }*/
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        // labelDescription.setText(descriptionTextArea.getText());
+
 
 
 // обнуление полей
@@ -176,6 +182,16 @@ String select = "select * from registrationсlaims.personal";
 
 
     public void getListClaims(){
+        Parent rootList = null;
+        try {
+            rootList = FXMLLoader.load(getClass().getResource("listClaims.fxml"));
+            Stage listStage = new Stage();
+            listStage.setTitle("Список заявок");
+            listStage.setScene(new Scene(rootList, 1000, 575));
+            listStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }
