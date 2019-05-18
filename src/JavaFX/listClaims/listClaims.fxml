@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="listClaimsForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="1118.0" styleClass="listClaimsForm" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFX.listClaims.ControllerListClaims">
+   <children>
+      <Button fx:id="buttonSelectedRow" layoutX="21.0" layoutY="476.0" mnemonicParsing="false" onAction="#getSelectedRow" text="Выбрать заявку">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="33.0" layoutY="30.0" prefHeight="27.0" prefWidth="200.0" text="Список заявок">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableView" layoutX="21.0" layoutY="57.0" prefHeight="400.0" prefWidth="950.0">
+        <columns>
+          <TableColumn fx:id="idClaims" prefWidth="55.0" text="№" />
+          <TableColumn fx:id="dateTime" prefWidth="150.0" text="дата/время" />
+          <TableColumn fx:id="employer" prefWidth="100.0" text="исполнитель" />
+          <TableColumn fx:id="client" prefWidth="100.0" text="клиент" />
+          <TableColumn fx:id="status" prefWidth="100.0" text="статус" />
+          <TableColumn fx:id="description" prefWidth="100.0" text="описание" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

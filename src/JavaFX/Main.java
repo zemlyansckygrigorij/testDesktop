@@ -15,9 +15,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent rootConnect = FXMLLoader.load(getClass().getResource("connector.fxml"));
+        new FormControl().runConnectForm();
+       /* Parent rootConnect = FXMLLoader.load(getClass().getResource("connector/connector.fxml"));
         primaryStage.setTitle("Cоединение с сервером");
-        primaryStage.setScene(new Scene(rootConnect, 1000, 575));
+        primaryStage.setScene(new Scene(rootConnect, 5000, 575));
         primaryStage.show();
 
 
@@ -26,7 +27,7 @@ public class Main extends Application {
             public void handle(WindowEvent we) {
                 if(!ConnectionClass.getConnect()) return;
                 try {
-                    Parent rootClaim = FXMLLoader.load(getClass().getResource("sample.fxml"));
+                    Parent rootClaim = FXMLLoader.load(getClass().getResource("claim/sample.fxml"));
                     Stage  claimStage = new Stage();
                     claimStage.setTitle("Регистрация заявок");
                     claimStage.setScene(new Scene(rootClaim, 1000, 575));
@@ -38,12 +39,8 @@ public class Main extends Application {
             }
         });
 
+*/
 
-       /* Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Регистрация заявок");
-        primaryStage.setScene(new Scene(root, 1000, 575));
-        primaryStage.show();
-        */
     }
 
 
