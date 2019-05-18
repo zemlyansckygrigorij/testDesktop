@@ -1,7 +1,6 @@
 package JavaFX;
 
-import Java.Person;
-import Java.Status;
+import Java.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -62,58 +61,11 @@ public class Controller {
         //вставка текущей времени в поле "Время заявки"
         timeTextField.setText(dateTime.toLocalTime().toString().substring(0, 8));
 
-        //получить данные из таблицы personal - сотрудники
 
-
-        connection = ConnectionClass.getConnection();
-
-
-        try (Statement statement = connection.createStatement()) {
-            String selectPersonal = "select * from registrationсlaims.personal LIMIT 4";
-            ResultSet resultSetPersonal = statement.executeQuery(selectPersonal);
-
-            while (resultSetPersonal.next()) {
-                //создаем обьект -сотрудник
-                Person person = new Person(resultSetPersonal.getInt(1), resultSetPersonal.getString(2));
-
-                //вставка обьекта сотрудник в списки  "Отправитель" и "Исполнитель"
-                implementerTextField.getItems().add(person);
-
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        //получить данные из таблицы clients - клиенты
-        try (Statement statement = connection.createStatement()) {
-            String selectSender = "select * from registrationсlaims.clients LIMIT 4";
-            ResultSet resultSetSender = statement.executeQuery(selectSender);
-
-            while (resultSetSender.next()) {
-                //создаем обьект -сотрудник
-                Person person = new Person(resultSetSender.getInt(1), resultSetSender.getString(2));
-
-                //вставка обьекта сотрудник в списки  "Отправитель" и "Исполнитель"
-
-                senderTextField.getItems().add(person);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        //получить данные из таблицы status - статус заявки
-        try (Statement statement = connection.createStatement()) {
-            String selectStatus = "select * from registrationсlaims.status";
-            ResultSet resultSetStatus = statement.executeQuery(selectStatus);
-
-            while (resultSetStatus.next()) {
-                Status status = new Status(resultSetStatus.getInt(1), resultSetStatus.getString(2));
-                statusTextFiled.getItems().add(status);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
+      //  вставка обьектов в списки  "Отправитель" и "Исполнитель" "Статус"
+        implementerTextField.getItems().addAll(EmployerRepository.getEmployerList());
+        senderTextField.getItems().addAll(ClientRepository.getClientList());
+        statusTextFiled.getItems().addAll(StatusRepository.getStatusList());
 
     }
 
@@ -122,8 +74,8 @@ public class Controller {
 
         String description = descriptionTextArea.getText();
 
-        Person sender = (Person) senderTextField.getValue();
-        Person implementer = (Person) implementerTextField.getValue();
+        Client sender = (Client) senderTextField.getValue();
+        Employer implementer = (Employer) implementerTextField.getValue();
         Status status = (Status)statusTextFiled.getValue();
         //текущая время дата
         LocalDateTime dateTime = LocalDateTime.now();

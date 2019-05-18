@@ -25,6 +25,7 @@
           <TableColumn fx:id="dateTime" prefWidth="75.0" text="дата/время" />
           <TableColumn fx:id="implementer" prefWidth="75.0" text="исполнитель" />
           <TableColumn fx:id="sender" prefWidth="75.0" text="клиент" />
+            <TableColumn fx:id="status" prefWidth="75.0" text="статус" />
           <TableColumn fx:id="description" prefWidth="75.0" text="описание" />
         </columns>
       </TableView>

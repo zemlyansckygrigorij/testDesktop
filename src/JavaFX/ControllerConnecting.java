@@ -1,15 +1,10 @@
 package JavaFX;
 
-import Java.Person;
-import Java.Status;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.time.LocalDateTime;
+
 import Connection.ConnectionClass;
 
 public class ControllerConnecting {

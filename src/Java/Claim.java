@@ -1,16 +1,14 @@
 package Java;
 
-import java.time.LocalDateTime;
-
 public class Claim {
     private int id;
     private String dateTime;
-    private Person implementer;
-    private Person sender;
+    private Employer implementer;
+    private Employer sender;
     private Status status;
     private String description;
 
-    public Claim(int id, String dateTime, Person implementer, Person sender, Status status,String description){
+    public Claim(int id, String dateTime, Employer implementer, Employer sender, Status status, String description){
         this.id = id;
         this.dateTime = dateTime;
         this.implementer = implementer;
@@ -35,19 +33,19 @@ public class Claim {
         this.dateTime = dateTime;
     }
 
-    public void setImplementer(Person implementer) {
+    public void setImplementer(Employer implementer) {
         this.implementer = implementer;
     }
 
-    public Person getImplementer() {
+    public Employer getImplementer() {
         return implementer;
     }
 
-    public void setSender(Person sender) {
+    public void setSender(Employer sender) {
         this.sender = sender;
     }
 
-    public Person getSender() {
+    public Employer getSender() {
         return sender;
     }
 

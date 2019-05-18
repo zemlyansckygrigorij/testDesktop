@@ -1,11 +1,11 @@
 package Java;
 
-public class Person {
+public class Employer {
 
     private int id;
     private String name;
 
-    public Person(int id,String name ){
+    public Employer(int id, String name ){
         this.id = id;
         this.name = name;
     }

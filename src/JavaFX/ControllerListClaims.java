@@ -1,18 +1,13 @@
 package JavaFX;
 
 import Java.Claim;
-import Java.Person;
-import Java.Status;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.time.LocalDateTime;
+
 import Connection.ConnectionClass;
 import javafx.scene.control.cell.PropertyValueFactory;
 
