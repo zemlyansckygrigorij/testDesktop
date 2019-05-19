@@ -22,7 +22,6 @@ public class ConnectionClass {
         ConnectionClass.password = password;
         ConnectionClass.host = host;
         ConnectionClass.port = port;
-
     }
 
 
@@ -47,22 +46,6 @@ public class ConnectionClass {
     private static void setConnect(boolean connect){
         ConnectionClass.connect = connect;
     }
-
 }
 
 
-/*
-*  private static Connection connection;
-    private static String dbName= "registrationсlaims";
-    private static String userName = "root";
-    private static String host = "localhost";
-    private static String port = "3306";
-    private static boolean autoReconnect = true;
-    private static boolean useSSL = false;
-    private static String password = "uhbujhbq";
-*
-*
-*
-*
-*
-* */

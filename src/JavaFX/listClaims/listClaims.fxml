@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="listClaimsForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="1118.0" styleClass="listClaimsForm" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFX.listClaims.ControllerListClaims">
+<AnchorPane fx:id="listClaimsForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="1235.0" styleClass="listClaimsForm" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFX.listClaims.ControllerListClaims">
    <children>
-      <Button fx:id="buttonSelectedRow" layoutX="21.0" layoutY="476.0" mnemonicParsing="false" onAction="#getSelectedRow" text="Выбрать заявку">
+      <Button fx:id="buttonSelectedRow" layoutX="983.0" layoutY="98.0" mnemonicParsing="false" onAction="#getSelectedRow" prefHeight="39.0" prefWidth="229.0" text="Выбрать заявку">
          <font>
             <Font size="18.0" />
          </font>
@@ -29,5 +29,25 @@
           <TableColumn fx:id="description" prefWidth="100.0" text="описание" />
         </columns>
       </TableView>
+      <Button fx:id="buttonReturnFormClaim" layoutX="983.0" layoutY="58.0" mnemonicParsing="false" onAction="#returnFormClaim" prefHeight="39.0" prefWidth="229.0" text="Создать заявку">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonReportImplementers" layoutX="983.0" layoutY="138.0" mnemonicParsing="false" onAction="#createReportImplementers" prefHeight="39.0" prefWidth="229.0" text="Отчет по исполнителям">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonReportClaims" layoutX="983.0" layoutY="178.0" mnemonicParsing="false" onAction="#createReportClaims" prefHeight="39.0" prefWidth="229.0" text="Отчет по заявкам">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="labelMessage" layoutX="21.0" layoutY="466.0" prefHeight="39.0" prefWidth="1136.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

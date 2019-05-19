@@ -2,7 +2,9 @@ package JavaFX;
 
 import Java.objects.Claim;
 import JavaFX.claim.Controller;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import Connection.ConnectionClass;
@@ -10,10 +12,15 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.VBox;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import javafx.event.EventHandler;
 import javafx.stage.WindowEvent;
 
+import java.io.File;
 import java.io.IOException;
 
 public class FormControl {
@@ -24,6 +31,8 @@ public class FormControl {
     private static Stage claimForm = null;
     private static Stage listClaimsForm = null;
     private static Controller controller = null;
+    private static Stage formDirectoryChooser = null;
+
 
     public static Controller getController() {
         return controller;
@@ -93,7 +102,7 @@ public class FormControl {
             rootList = FXMLLoader.load(getClass().getResource("listClaims/listClaims.fxml"));
             Stage listStage = new Stage();
             listStage.setTitle("Список заявок");
-            listStage.setScene(new Scene(rootList, 1000, 575));
+            listStage.setScene(new Scene(rootList, 1500, 575));
             listStage.show();
             listClaimsForm =listStage;
         } catch (IOException e) {
@@ -101,6 +110,8 @@ public class FormControl {
         }
 
     }
+
+
 
     public static Stage getClaimForm() {
         return claimForm;

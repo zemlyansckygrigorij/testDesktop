@@ -64,9 +64,9 @@ public class Controller {
         if(selectClaim ==null)return;
         idTextField.setText(String.valueOf(selectClaim.getId()));
         System.out.println(selectClaim.getDateTime().substring(0,10));
-        System.out.println(selectClaim.getDateTime().substring(10,15));
-       // dataPicker.setValue(LocalDate.parse(selectClaim.getDateTime().substring(0,10)));
-      //  timeTextField.setText(selectClaim.getDateTime().substring(10,20) );
+        System.out.println(selectClaim .getDateTime().substring(11,19));
+        dataPicker.setValue(LocalDate.parse(selectClaim.getDateTime().substring(0,10)));
+        timeTextField.setText(selectClaim.getDateTime().substring(11,19) );
         implementerTextField.setValue(selectClaim.getEmployer())   ;
         senderTextField.setValue(selectClaim.getClient() );
         statusTextFiled.setValue(selectClaim.getStatus() );
@@ -106,7 +106,6 @@ public class Controller {
 
 
         String description = descriptionTextArea.getText();
-
         Client sender = (Client) senderTextField.getValue();
         Employer implementer = (Employer) implementerTextField.getValue();
         Status status = (Status)statusTextFiled.getValue();
@@ -134,7 +133,6 @@ public class Controller {
              return;
         }
 
-
 //если отправитель не выбран
         if (sender == null) {
              labelMessage.setText("Выберите отправителя");
@@ -147,26 +145,26 @@ public class Controller {
              return;
         }
 
-        
-
-
-
-
+//работа с таблицей
         try (Statement statement = connection.createStatement()) {
 			if (selectClaim == null) {
-				String sql = "insert into claims (date_time,id_implementer,id_sender,id_status,description) values('" +  dateTimeClaim +  "','" + implementer.getId() + "','" + sender.getId() + "','" + status.getId() + "','" + description + "')";
+			   // вставка
+				String sql = "insert into claims (date_time,id_implementer,id_sender,id_status,description) values('"
+                        +  dateTimeClaim +  "','" + implementer.getId() + "','" + sender.getId() + "','" + status.getId() + "','" + description + "')";
 				statement.executeUpdate(sql);
-		}else{
-				String sql = "UPDATE claims SET date_time = '" +  dateTimeClaim +  "', id_implementer = '" + implementer.getId() + "',id_sender =  '" + sender.getId() + "',id_status = '" + status.getId() + "', description ='" + description + "' WHERE claims.id = "+FormControl.getSelectClaim().getId()+";";
+		    }else{
+			    //обновление
+				String sql = "UPDATE claims SET date_time = '"
+                        +  dateTimeClaim +  "', id_implementer = '" + implementer.getId() + "',id_sender =  '"
+                        + sender.getId() + "',id_status = '" + status.getId() + "', description ='"
+                        + description + "' WHERE claims.id_claims = "+FormControl.getSelectClaim().getId()+";";
 				statement.executeUpdate(sql);
 				selectClaim.setEmployer(implementer);
 				selectClaim.setClient(sender);
 				selectClaim.setStatus(status);
 				selectClaim.setDescription(description);
 				FormControl.setSelectClaim(null);
-		}
-			
-            
+		    }
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -2,11 +2,8 @@ package JavaFX.connector;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
 import java.sql.Connection;
-
 import Connection.ConnectionClass;
-
 public class ControllerConnecting {
 
 
@@ -22,7 +19,8 @@ public class ControllerConnecting {
     private Label labelMessage;
     @FXML
     private TextField dataBaseTextField;
-
+    @FXML
+    private Label labelMessageSecond;
 
     ConnectionClass connectionClass;
     Connection connection;
@@ -65,9 +63,11 @@ public class ControllerConnecting {
         //соединение с сервером
         connection = ConnectionClass.getConnection();
         if(ConnectionClass.getConnect()){
-            labelMessage.setText("Соединение установлено . ");
+            labelMessage.setText("Соединение установлено. ");
+            labelMessageSecond.setText("Закройте форму. ");
         }else{
-            labelMessage.setText("Ошибка соединения . Введите параметры заново .");
+            labelMessage.setText("Ошибка соединения.");
+            labelMessageSecond.setText(" Введите параметры заново. ");
         }
 
         // обнуление полей
