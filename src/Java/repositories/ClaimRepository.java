@@ -24,15 +24,13 @@ public class ClaimRepository {
 
             while (resultSetClaim.next()) {
                 //создаем обьект -заявку
-                System.out.println("employer - "+ resultSetClaim.getInt(3));
-                System.out.println("Client - "+ resultSetClaim.getInt(4));
-                System.out.println("Status - "+ resultSetClaim.getInt(5));
+
                 Employer employer = EmployerRepository.getEmployerById(resultSetClaim.getInt(3));
-                System.out.println("employerName - "+ employer);
+
                 Client client = ClientRepository.getClientById(resultSetClaim.getInt(4));
-                System.out.println("clientName - "+ client);
+
                 Status status = StatusRepository.getStatusById(resultSetClaim.getInt(5));
-                System.out.println("descriptName - "+ resultSetClaim.getString(6));
+
                 claimList.add(new Claim(resultSetClaim.getInt(1), resultSetClaim.getString(2).substring(0, 19), employer, client, status, resultSetClaim.getString(6)));
             }
         } catch (SQLException e) {
