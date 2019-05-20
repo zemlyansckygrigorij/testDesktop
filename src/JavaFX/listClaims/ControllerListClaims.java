@@ -144,7 +144,7 @@ public class ControllerListClaims {
 
             writer.write("Отчет по исполнителям" +'\n');
             writer.append('\n');
-            // запись по символам
+
             ArrayList<Claim> claimList = ClaimRepository.getClaimList();
             ArrayList<Employer> employerList = EmployerRepository.getEmployerList();
 

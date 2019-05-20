@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="testDesktop:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/testDesktop_jar</output-path>
+    <root id="archive" name="testDesktop.jar">
+      <element id="module-output" name="testDesktop" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/mysql-connector-java-5.1.47-bin.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

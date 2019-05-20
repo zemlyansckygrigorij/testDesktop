@@ -95,11 +95,11 @@ public class Controller {
         Status status = (Status)statusTextFiled.getValue();
         //текущая время дата
         LocalDateTime dateTime = LocalDateTime.now();
-        String dateNow = dateTime.toLocalDate().toString();
+
         String timeNow = dateTime.toLocalTime().toString().substring(0, 8);
 
         //время-дата для вставки в MySQL
-        String dateTimeClaim = dateNow+" "+timeNow;
+        String dateTimeClaim = dataPicker.getValue()+" "+timeNow;
 
         //соединение с сервером
         connection = ConnectionClass.getConnection();
