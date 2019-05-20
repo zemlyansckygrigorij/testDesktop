@@ -62,8 +62,6 @@ public class Controller {
         selectClaim = FormControl.getSelectClaim();
         if(selectClaim ==null)return;
         idTextField.setText(String.valueOf(selectClaim.getId()));
-        System.out.println(selectClaim.getDateTime().substring(0,10));
-        System.out.println(selectClaim .getDateTime().substring(11,19));
         dataPicker.setValue(LocalDate.parse(selectClaim.getDateTime().substring(0,10)));
         timeTextField.setText(selectClaim.getDateTime().substring(11,19) );
         implementerTextField.setValue(selectClaim.getEmployer())   ;

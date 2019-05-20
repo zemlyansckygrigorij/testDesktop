@@ -22,17 +22,18 @@ import javafx.stage.WindowEvent;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class FormControl {
     private static Claim selectClaim = null;
-
-
+	private static LocalDate dataBegin;
+	private static LocalDate dataEnd;
     private static Stage connectForm = null;
     private static Stage claimForm = null;
     private static Stage listClaimsForm = null;
     private static Controller controller = null;
     private static Stage formDirectoryChooser = null;
-
+    private static Stage selectDateForm = null;
 
     public static Controller getController() {
         return controller;
@@ -49,6 +50,43 @@ public class FormControl {
     public static void setSelectClaim(Claim selectClaim) {
         FormControl.selectClaim = selectClaim;
     }
+
+    public static LocalDate getDataBegin() {
+        return dataBegin;
+    }
+
+    public static LocalDate getDataEnd() {
+        return dataEnd;
+    }
+
+    public static void setDataBegin(LocalDate dataBegin) {
+        FormControl.dataBegin = dataBegin;
+    }
+
+    public static void setDataEnd(LocalDate dataEnd) {
+        FormControl.dataEnd = dataEnd;
+    }
+
+    public static Stage getSelectDateForm() {
+        return selectDateForm;
+    }
+
+
+
+    public   void runSelectDateForm(){
+        try {
+            Parent rootSelectDate = FXMLLoader.load(getClass().getResource("selectDate/formSelectDate.fxml"));
+            Stage  selectDateStage = new Stage();
+            selectDateStage.setTitle("Выберите период");
+            selectDateStage.setScene(new Scene(rootSelectDate, 500, 175));
+            selectDateStage.show();
+            selectDateForm = selectDateStage;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
     public  void runConnectForm(){
         Parent rootConnect = null;
