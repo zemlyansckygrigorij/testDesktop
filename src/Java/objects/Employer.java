@@ -26,4 +26,8 @@ public class Employer {
     public String toString(){
         return this.name;
     }
+
+    public int valueOf(){
+        return id;
+    }
 }

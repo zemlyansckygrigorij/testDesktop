@@ -23,8 +23,8 @@ public class ClaimRepository {
             ResultSet resultSetClaim = statement.executeQuery(selectClaim);
 
             while (resultSetClaim.next()) {
-                //создаем обьект -заявку
 
+                //создаем обьект -заявку
                 Employer employer = EmployerRepository.getEmployerById(resultSetClaim.getInt(3));
 
                 Client client = ClientRepository.getClientById(resultSetClaim.getInt(4));

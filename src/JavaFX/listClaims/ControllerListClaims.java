@@ -1,21 +1,16 @@
 package JavaFX.listClaims;
 
 import Java.objects.Claim;
-import Java.objects.DirectoryChooserDemo;
 import Java.objects.Employer;
 import Java.objects.Status;
 import Java.repositories.ClaimRepository;
 import Java.repositories.EmployerRepository;
 import Java.repositories.StatusRepository;
 import JavaFX.FormControl;
-import JavaFX.claim.Controller;
-import com.sun.prism.impl.Disposer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.input.InputEvent;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
@@ -140,7 +135,7 @@ public class ControllerListClaims {
 
 
     }
-    @FXML private void createReportImplementers(){
+    @FXML private void createReportEmployers(){
         String filePath = createFile("Отчет_по_исполнителям");
         if(filePath==null)return;
         try(FileWriter writer = new FileWriter(filePath, false))

@@ -21,8 +21,8 @@
          <font>
             <Font size="15.0" />
          </font></TextField>
-      <ComboBox fx:id="implementerTextField" layoutX="413.0" layoutY="49.0" prefHeight="25.0" prefWidth="174.0" promptText="Выберите исполнителя" />
-      <ComboBox fx:id="senderTextField" layoutX="595.0" layoutY="49.0" prefHeight="25.0" prefWidth="174.0" promptText="Выберите отправителя" />
+      <ComboBox fx:id="employerTextField" layoutX="413.0" layoutY="49.0" prefHeight="25.0" prefWidth="174.0" promptText="Выберите исполнителя" />
+      <ComboBox fx:id="clientTextField" layoutX="595.0" layoutY="49.0" prefHeight="25.0" prefWidth="174.0" promptText="Выберите отправителя" />
       <Label fx:id="labelDate" layoutX="225.0" layoutY="24.0" text="Дата заявки">
          <font>
             <Font size="15.0" />

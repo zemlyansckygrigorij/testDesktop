@@ -28,4 +28,8 @@ public class Client {
     public String toString() {
         return name;
     }
+
+    public int valueOf(){
+        return id;
+    }
 }

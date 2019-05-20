@@ -25,4 +25,8 @@ public class Status {
     public String toString(){
         return this.name;
     }
+
+    public int valueOf(){
+        return id;
+    }
 }

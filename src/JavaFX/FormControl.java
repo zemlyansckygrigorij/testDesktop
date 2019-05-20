@@ -2,37 +2,28 @@ package JavaFX;
 
 import Java.objects.Claim;
 import JavaFX.claim.Controller;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import Connection.ConnectionClass;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.layout.VBox;
-import javafx.stage.DirectoryChooser;
+
 import javafx.stage.Stage;
 import javafx.event.EventHandler;
 import javafx.stage.WindowEvent;
 
-import java.io.File;
+
 import java.io.IOException;
 import java.time.LocalDate;
 
 public class FormControl {
     private static Claim selectClaim = null;
-	private static LocalDate dataBegin;
-	private static LocalDate dataEnd;
+	//private static LocalDate dataBegin;
+//	private static LocalDate dataEnd;
     private static Stage connectForm = null;
     private static Stage claimForm = null;
     private static Stage listClaimsForm = null;
     private static Controller controller = null;
-    private static Stage formDirectoryChooser = null;
+  //  private static Stage formDirectoryChooser = null;
     private static Stage selectDateForm = null;
 
     public static Controller getController() {
@@ -51,7 +42,7 @@ public class FormControl {
         FormControl.selectClaim = selectClaim;
     }
 
-    public static LocalDate getDataBegin() {
+   /* public static LocalDate getDataBegin() {
         return dataBegin;
     }
 
@@ -66,7 +57,7 @@ public class FormControl {
     public static void setDataEnd(LocalDate dataEnd) {
         FormControl.dataEnd = dataEnd;
     }
-
+*/
     public static Stage getSelectDateForm() {
         return selectDateForm;
     }

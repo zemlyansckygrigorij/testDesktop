@@ -17,19 +17,19 @@ public class EmployerRepository {
    static{
        Connection connection = ConnectionClass.getConnection();
        try (Statement statement = connection.createStatement()) {
-           String selectPersonal = "select * from registrationсlaims.personal LIMIT 4";
-           ResultSet resultSetPersonal = statement.executeQuery(selectPersonal);
+           String selectEmployer = "select * from registrationсlaims.employers LIMIT 4";
+           ResultSet resultSetEmployer = statement.executeQuery(selectEmployer);
 
-           while (resultSetPersonal.next()) {
+           while (resultSetEmployer.next()) {
 
                //создаем обьект -сотрудник
-               employerList.add(new Employer(resultSetPersonal.getInt(1), resultSetPersonal.getString(2)));
+               employerList.add(new Employer(resultSetEmployer.getInt(1), resultSetEmployer.getString(2)));
            }
        } catch (SQLException e) {
            e.printStackTrace();
        }
    }
-    EmployerRepository(){}
+
 
     public static ArrayList<Employer> getEmployerList(){
        return employerList;

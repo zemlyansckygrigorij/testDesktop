@@ -21,7 +21,7 @@ public class StatusRepository {
             ResultSet resultSetStatus = statement.executeQuery(selectStatus);
 
             while (resultSetStatus.next()) {
-                //создаем обьект -клиент
+                //создаем обьект -статус
                 statusList.add(new Status(resultSetStatus.getInt(1), resultSetStatus.getString(2)));
             }
         } catch (SQLException e) {

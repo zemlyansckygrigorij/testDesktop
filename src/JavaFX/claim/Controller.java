@@ -9,19 +9,11 @@ import Java.repositories.ClientRepository;
 import Java.repositories.EmployerRepository;
 import Java.repositories.StatusRepository;
 import JavaFX.FormControl;
-import JavaFX.Main;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import Connection.ConnectionClass;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
-
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.SQLException;
@@ -29,7 +21,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Comparator;
+
 
 
 public class Controller {
@@ -37,35 +29,32 @@ public class Controller {
     public DatePicker dataPicker;
     public TextField timeTextField;
     public TextField idTextField;
-    public ComboBox implementerTextField;
-    public ComboBox senderTextField;
+    public ComboBox employerTextField;
+    public ComboBox clientTextField;
     public Label labelDate;
     public Label labelTime;
-    public Label labelSender;
-    public Label labelImplementer;
+    public Label labelclient;
+    public Label labelemployer;
     public Label labelStatus;
 
     public TextArea descriptionTextArea;
     public ComboBox statusTextFiled;
     public Label labelDescription;
     public Label labelMessage;
-    ConnectionClass connectionClass;
     Connection connection;
 	Claim selectClaim = null;
 	@FXML
     AnchorPane mainForm;
-    Stage stage ;
 
     @FXML
-    public  void update(){
-
+    public  void update(){//обновить полученную строку
         selectClaim = FormControl.getSelectClaim();
         if(selectClaim ==null)return;
         idTextField.setText(String.valueOf(selectClaim.getId()));
         dataPicker.setValue(LocalDate.parse(selectClaim.getDateTime().substring(0,10)));
         timeTextField.setText(selectClaim.getDateTime().substring(11,19) );
-        implementerTextField.setValue(selectClaim.getEmployer())   ;
-        senderTextField.setValue(selectClaim.getClient() );
+        employerTextField.setValue(selectClaim.getEmployer())   ;
+        clientTextField.setValue(selectClaim.getClient() );
         statusTextFiled.setValue(selectClaim.getStatus() );
         descriptionTextArea.setText(selectClaim.getDescription() );
     }
@@ -76,14 +65,12 @@ public class Controller {
         FormControl.setController(this);
 
         //если id не передан то создаем заявку
-        if (FormControl.getSelectClaim()!=null) {//доделать
+        if (FormControl.getSelectClaim()!=null) {
             update();
 
         }else{
 			// Получить дату время
 			LocalDateTime dateTime = LocalDateTime.now();
-			// String dateNow = dateTime.toLocalDate().toString();
-			String timeNow = dateTime.toLocalTime().toString().substring(0, 8);
 
 			//вставка текущей даты в поле "Дата заявки"
 			dataPicker.setValue(dateTime.toLocalDate());
@@ -93,8 +80,8 @@ public class Controller {
 		}
 
       //  вставка обьектов в списки  "Отправитель" и "Исполнитель" "Статус"
-        implementerTextField.getItems().addAll(EmployerRepository.getEmployerList());
-        senderTextField.getItems().addAll(ClientRepository.getClientList());
+        employerTextField.getItems().addAll(EmployerRepository.getEmployerList());
+        clientTextField.getItems().addAll(ClientRepository.getClientList());
         statusTextFiled.getItems().addAll(StatusRepository.getStatusList());
 
     }
@@ -103,8 +90,8 @@ public class Controller {
 
 
         String description = descriptionTextArea.getText();
-        Client sender = (Client) senderTextField.getValue();
-        Employer implementer = (Employer) implementerTextField.getValue();
+        Client client = (Client) clientTextField.getValue();
+        Employer employer = (Employer) employerTextField.getValue();
         Status status = (Status)statusTextFiled.getValue();
         //текущая время дата
         LocalDateTime dateTime = LocalDateTime.now();
@@ -125,13 +112,13 @@ public class Controller {
         }
 
 //если исполнитель не выбран
-        if (implementer == null) {
+        if (employer == null) {
              labelMessage.setText("Выберите исполнителя");
              return;
         }
 
 //если отправитель не выбран
-        if (sender == null) {
+        if (client == null) {
              labelMessage.setText("Выберите отправителя");
              return;
         }
@@ -151,22 +138,22 @@ public class Controller {
                 int maxId = claimList.stream().max((claim1, claim2) -> Integer.compare( claim1.getId(), claim2.getId())).get().getId();
 
 			   // вставка
-				String sql = "insert into claims (date_time,id_implementer,id_sender,id_status,description) values('"
-                        +  dateTimeClaim +  "','" + implementer.getId() + "','" + sender.getId() + "','" + status.getId() + "','" + description + "')";
+				String sql = "insert into claims (date_time,id_employer,id_client,id_status,description) values('"
+                        +  dateTimeClaim +  "','" + employer.getId() + "','" + client.getId() + "','" + status.getId() + "','" + description + "')";
 				statement.executeUpdate(sql);
 
 				//вставка в хранилище
-                ClaimRepository.getClaimList().add(new Claim(maxId +1 , dateTimeClaim, implementer, sender, status, description));
+                ClaimRepository.getClaimList().add(new Claim(maxId +1 , dateTimeClaim, employer, client, status, description));
 
 		    }else{
 			    //обновление
 				String sql = "UPDATE claims SET date_time = '"
-                        +  dateTimeClaim +  "', id_implementer = '" + implementer.getId() + "',id_sender =  '"
-                        + sender.getId() + "',id_status = '" + status.getId() + "', description ='"
-                        + description + "' WHERE claims.id_claims = "+FormControl.getSelectClaim().getId()+";";
+                        +  dateTimeClaim +  "', id_employer = '" + employer.getId() + "',id_client =  '"
+                        + client.getId() + "',id_status = '" + status.getId() + "', description ='"
+                        + description + "' WHERE claims.id_claim = "+FormControl.getSelectClaim().getId()+";";
 				statement.executeUpdate(sql);
-				selectClaim.setEmployer(implementer);
-				selectClaim.setClient(sender);
+				selectClaim.setEmployer(employer);
+				selectClaim.setClient(client);
 				selectClaim.setStatus(status);
 				selectClaim.setDescription(description);
                 selectClaim=null;
@@ -180,8 +167,8 @@ public class Controller {
 
 // обнуление полей
          descriptionTextArea.setText("");
-         senderTextField.setValue(null);
-         implementerTextField.setValue(null);
+         clientTextField.setValue(null);
+         employerTextField.setValue(null);
          statusTextFiled.setValue(null);
 
     }
