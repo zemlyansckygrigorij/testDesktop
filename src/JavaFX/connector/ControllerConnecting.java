@@ -1,8 +1,18 @@
 package JavaFX.connector;
 
+import Java.objects.Claim;
+import Java.objects.Client;
+import Java.objects.Employer;
+import Java.objects.Status;
+import Java.repositories.ClaimRepository;
+import Java.repositories.ClientRepository;
+import Java.repositories.EmployerRepository;
+import Java.repositories.StatusRepository;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import java.sql.Connection;
+import java.util.ArrayList;
+
 import Connection.ConnectionClass;
 public class ControllerConnecting {
 
@@ -63,6 +73,12 @@ public class ControllerConnecting {
         //соединение с сервером
         connection = ConnectionClass.getConnection();
         if(ConnectionClass.getConnect()){
+            //загрузка данных
+            ArrayList<Employer> employerList = EmployerRepository.getEmployerList();
+            ArrayList<Client> clientList = ClientRepository.getClientList();
+            ArrayList<Status> statusList = StatusRepository.getStatusList();
+            ArrayList<Claim> claimList = ClaimRepository.getClaimList();
+            // выдача сообщения об удачном соединении
             labelMessage.setText("Соединение установлено. ");
             labelMessageSecond.setText("Закройте форму. ");
         }else{

@@ -65,5 +65,8 @@ public class Claim {
         this.description = description;
     }
 
+    public int valueOf(){
+        return id;
+    }
 
 }

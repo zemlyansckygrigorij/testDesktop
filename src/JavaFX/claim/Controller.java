@@ -4,6 +4,7 @@ import Java.objects.Claim;
 import Java.objects.Client;
 import Java.objects.Employer;
 import Java.objects.Status;
+import Java.repositories.ClaimRepository;
 import Java.repositories.ClientRepository;
 import Java.repositories.EmployerRepository;
 import Java.repositories.StatusRepository;
@@ -27,10 +28,8 @@ import java.sql.SQLException;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-
-
-
-
+import java.util.ArrayList;
+import java.util.Comparator;
 
 
 public class Controller {
@@ -148,10 +147,19 @@ public class Controller {
 //работа с таблицей
         try (Statement statement = connection.createStatement()) {
 			if (selectClaim == null) {
+
+
+                ArrayList<Claim> claimList =  ClaimRepository.getClaimList();
+                int maxId = claimList.stream().max((claim1, claim2) -> Integer.compare( claim1.getId(), claim2.getId())).get().getId();
+
 			   // вставка
 				String sql = "insert into claims (date_time,id_implementer,id_sender,id_status,description) values('"
                         +  dateTimeClaim +  "','" + implementer.getId() + "','" + sender.getId() + "','" + status.getId() + "','" + description + "')";
 				statement.executeUpdate(sql);
+
+				//вставка в хранилище
+                ClaimRepository.getClaimList().add(new Claim(maxId +1 , dateTimeClaim, implementer, sender, status, description));
+
 		    }else{
 			    //обновление
 				String sql = "UPDATE claims SET date_time = '"
@@ -163,6 +171,7 @@ public class Controller {
 				selectClaim.setClient(sender);
 				selectClaim.setStatus(status);
 				selectClaim.setDescription(description);
+                selectClaim=null;
 				FormControl.setSelectClaim(null);
 		    }
         } catch (SQLException e) {
