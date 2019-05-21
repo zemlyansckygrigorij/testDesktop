@@ -13,17 +13,14 @@ import javafx.stage.WindowEvent;
 
 
 import java.io.IOException;
-import java.time.LocalDate;
+
 
 public class FormControl {
     private static Claim selectClaim = null;
-	//private static LocalDate dataBegin;
-//	private static LocalDate dataEnd;
     private static Stage connectForm = null;
     private static Stage claimForm = null;
     private static Stage listClaimsForm = null;
     private static Controller controller = null;
-  //  private static Stage formDirectoryChooser = null;
     private static Stage selectDateForm = null;
 
     public static Controller getController() {
@@ -42,22 +39,7 @@ public class FormControl {
         FormControl.selectClaim = selectClaim;
     }
 
-   /* public static LocalDate getDataBegin() {
-        return dataBegin;
-    }
 
-    public static LocalDate getDataEnd() {
-        return dataEnd;
-    }
-
-    public static void setDataBegin(LocalDate dataBegin) {
-        FormControl.dataBegin = dataBegin;
-    }
-
-    public static void setDataEnd(LocalDate dataEnd) {
-        FormControl.dataEnd = dataEnd;
-    }
-*/
     public static Stage getSelectDateForm() {
         return selectDateForm;
     }

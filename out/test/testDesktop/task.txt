@@ -1,0 +1,122 @@
+Григорий Михайлович. Отправляю задание для проверки навыков 
+программирования и навыков работы с СУБД. Ориентировочной срок 
+разработки - 1 неделя
+Предлагаю на любом языке программирования разработать (в идеале Delphi) 
+программу регистрации заявок.
+Задача программы: Хранение заявок на обслуживание, СУБД MySQL. Вывод 
+отчетов по заявкам
+Типы данных:
+1.    Заявка имеет атрибуты: дата и время создания, исполнитель заявки 
+(выбирается из списка (4 сотрудника)), отправитель заявки (выбирается из 
+списка (4 сотрудника)), статус заявки – выбирается из списка 
+«выполнена», «не выполнена», текстовое описание заявки.
+2.    2 вида отчета:
+a.    отчет по исполнителям заявки, содержит: дата и время создания 
+заявки , исполнитель заявки, отправитель заявки, статус заявки, первые 
+10 символов из описания заявки
+b.    отчет о количестве «выполненных»  и «невыполненных заявок» за 
+заданный период  (указывается промежуток времени дата-дата), содержит: 
+дата и время создания заявки, исполнитель заявки, отправитель заявки, 
+статус заявки.
+
+3.    Разрабатывается окно программы для добавления (изменения заявки), 
+форма создания отчетов.
+
+Результат перешлете нам: откомпилированный код, исходный код, дамп базы 
+данных MySQL
+
+
+
+cd D:/work/testTasks/testDesktop
+
+
+
+
+
+
+
+
+
+база данных
+ registrationСlaims
+
+таблицы
+
+
+personal
+
+id 
+name
+position
+
+
+
+status
+
+id 
+description
+
+
+
+claims
+
+id
+date_time
+implementer
+sender
+id_status
+description
+
+
+
+
+create database  registrationСlaims;
+
+
+CREATE TABLE `registrationсlaims`.`personal` (
+  `id_personal` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
+  `name` VARCHAR(60) NOT NULL COMMENT '',
+  `position` VARCHAR(45) NOT NULL COMMENT '',
+  PRIMARY KEY (`id_personal`)  COMMENT '',
+  UNIQUE INDEX `id_personal_UNIQUE` (`id_personal` ASC)  COMMENT '');
+  
+  
+  CREATE TABLE `registrationсlaims`.`status` (
+  `id_status` INT NOT NULL AUTO_INCREMENT COMMENT '',
+  `description`  VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_status`)  COMMENT '',
+  UNIQUE INDEX `id_status_UNIQUE` (`id_status` ASC)  COMMENT '');
+  
+  
+  
+  CREATE TABLE `registrationсlaims`.`claims` (
+  `id_claims` INT NOT NULL AUTO_INCREMENT COMMENT '',
+  `date_time` DATETIME NOT NULL COMMENT '',
+  `implementer` INT NOT NULL COMMENT '',
+  `sender` INT NOT NULL COMMENT '',
+  `id_status` INT NOT NULL COMMENT '',
+  `description`  VARCHAR(250) NOT NULL COMMENT '',
+  PRIMARY KEY (`id_claims`)  COMMENT '',
+  UNIQUE INDEX `id_claims_UNIQUE` (`id_claims` ASC)  COMMENT '',
+  INDEX `id_status_idx` (`id_status` ASC)  COMMENT '',
+  CONSTRAINT `id_status`
+    FOREIGN KEY (`id_status`)
+    REFERENCES `registrationсlaims`.`status` (`id_status`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
+INSERT INTO `registrationсlaims`.`status` (`description`) VALUES ('0');
+INSERT INTO `registrationсlaims`.`status` (`description`) VALUES ('1');
+
+
+
+INSERT INTO `registrationсlaims`.`personal` (`name`, `position`) VALUES ('Иванов И.И.', 'инженер');
+INSERT INTO `registrationсlaims`.`personal` (`name`, `position`) VALUES ('Петров И.В.', 'заместитель');
+INSERT INTO `registrationсlaims`.`personal` (`name`, `position`) VALUES ('Сидоров П.П.', 'начальник отдела');
+INSERT INTO `registrationсlaims`.`personal` (`name`, `position`) VALUES ('Медведев М.М', 'инженер');
+
+
+login root
+password uhbujhbq

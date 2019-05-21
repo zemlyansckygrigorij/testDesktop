@@ -89,20 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tests/JavaFX/MainTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="99" column="53" lean-forward="true" selection-start-line="98" selection-start-column="8" selection-end-line="99" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/Java/repositories/EmployerRepositoryTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="19" column="5" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="19" selection-end-column="5" />
+            <state relative-caret-position="527">
+              <caret line="61" column="35" lean-forward="true" selection-start-line="60" selection-start-column="7" selection-end-line="61" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,22 +99,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/tests/Java/repositories/StatusRepositoryTest.java">
+        <entry file="file://$PROJECT_DIR$/src/tests/Connection/ConnectionClassTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/Java/repositories/ClaimRepositoryTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -200,7 +176,11 @@
         <option value="$PROJECT_DIR$/src/JavaFX/claim/Controller.java" />
         <option value="$PROJECT_DIR$/src/Java/objects/Learn.java" />
         <option value="$PROJECT_DIR$/src/Java/objects/LearnTest.groovy" />
+        <option value="$PROJECT_DIR$/src/tests/Java/repositories/ClaimRepositoryTest.java" />
+        <option value="$PROJECT_DIR$/src/tests/Java/repositories/EmployerRepositoryTest.java" />
+        <option value="$PROJECT_DIR$/src/tests/Java/repositories/StatusRepositoryTest.java" />
         <option value="$PROJECT_DIR$/src/tests/JavaFX/claim/ControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/tests/Java/repositories/ClientRepositoryTest.java" />
         <option value="$PROJECT_DIR$/src/JavaFX/FormControl.java" />
         <option value="$PROJECT_DIR$/src/JavaFX/listClaims/ControllerListClaims.java" />
         <option value="$PROJECT_DIR$/src/tests/Java/objects/ClaimTest.java" />
@@ -209,15 +189,11 @@
         <option value="$PROJECT_DIR$/src/tests/Java/objects/StatusTest.java" />
         <option value="$PROJECT_DIR$/src/tests/JavaFX/MainTest.java" />
         <option value="$PROJECT_DIR$/src/tests/Connection/ConnectionClassTest.java" />
-        <option value="$PROJECT_DIR$/src/tests/Java/repositories/ClientRepositoryTest.java" />
-        <option value="$PROJECT_DIR$/src/tests/Java/repositories/EmployerRepositoryTest.java" />
-        <option value="$PROJECT_DIR$/src/tests/Java/repositories/ClaimRepositoryTest.java" />
-        <option value="$PROJECT_DIR$/src/tests/Java/repositories/StatusRepositoryTest.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-27" />
     <option name="y" value="45" />
     <option name="width" value="1940" />
@@ -232,6 +208,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -344,8 +322,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -419,7 +395,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ClaimRepositoryTest">
+  <component name="RunManager" selected="JUnit.ConnectionClassTest">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -466,16 +442,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClaimRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClaimTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testDesktop" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Java.repositories.*" />
+          <option name="PATTERN" value="Java.objects.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Java.repositories" />
-      <option name="MAIN_CLASS_NAME" value="Java.repositories.ClaimRepositoryTest" />
+      <option name="PACKAGE_NAME" value="Java.objects" />
+      <option name="MAIN_CLASS_NAME" value="Java.objects.ClaimTest" />
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -485,16 +461,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClientTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testDesktop" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Java.repositories.*" />
+          <option name="PATTERN" value="Java.objects.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Java.repositories" />
-      <option name="MAIN_CLASS_NAME" value="Java.repositories.ClientRepositoryTest" />
+      <option name="PACKAGE_NAME" value="Java.objects" />
+      <option name="MAIN_CLASS_NAME" value="Java.objects.ClientTest" />
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -523,16 +499,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmployerRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmployerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testDesktop" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Java.repositories.*" />
+          <option name="PATTERN" value="Java.objects.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Java.repositories" />
-      <option name="MAIN_CLASS_NAME" value="Java.repositories.EmployerRepositoryTest" />
+      <option name="PACKAGE_NAME" value="Java.objects" />
+      <option name="MAIN_CLASS_NAME" value="Java.objects.EmployerTest" />
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -542,16 +518,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StatusRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StatusTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testDesktop" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Java.repositories.*" />
+          <option name="PATTERN" value="Java.objects.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Java.repositories" />
-      <option name="MAIN_CLASS_NAME" value="Java.repositories.StatusRepositoryTest" />
+      <option name="PACKAGE_NAME" value="Java.objects" />
+      <option name="MAIN_CLASS_NAME" value="Java.objects.StatusTest" />
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -585,19 +561,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.ClaimTest" />
+      <item itemvalue="JUnit.ClientTest" />
+      <item itemvalue="JUnit.StatusTest" />
+      <item itemvalue="JUnit.EmployerTest" />
       <item itemvalue="JUnit.ConnectionClassTest" />
-      <item itemvalue="JUnit.ClientRepositoryTest" />
-      <item itemvalue="JUnit.EmployerRepositoryTest" />
-      <item itemvalue="JUnit.StatusRepositoryTest" />
-      <item itemvalue="JUnit.ClaimRepositoryTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClaimRepositoryTest" />
-        <item itemvalue="JUnit.StatusRepositoryTest" />
-        <item itemvalue="JUnit.EmployerRepositoryTest" />
-        <item itemvalue="JUnit.ClientRepositoryTest" />
         <item itemvalue="JUnit.ConnectionClassTest" />
+        <item itemvalue="JUnit.StatusTest" />
+        <item itemvalue="JUnit.ClaimTest" />
+        <item itemvalue="JUnit.EmployerTest" />
+        <item itemvalue="JUnit.ClientTest" />
       </list>
     </recent_temporary>
   </component>
@@ -637,11 +613,20 @@
       <workItem from="1558419872665" duration="4293000" />
       <workItem from="1558438806450" duration="978000" />
       <workItem from="1558440029430" duration="15255000" />
-      <workItem from="1558457302050" duration="758000" />
+      <workItem from="1558457302050" duration="204000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
+    <history-entry file="ClaimTest - 2019.05.21 at 19h 37m 24s.xml">
+      <configuration name="ClaimTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClientTest - 2019.05.21 at 19h 37m 40s.xml">
+      <configuration name="ClientTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClientTest - 2019.05.21 at 19h 38m 13s.xml">
+      <configuration name="ClientTest" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="ClaimTest - 2019.05.21 at 19h 39m 55s.xml">
       <configuration name="ClaimTest" configurationId="JUnit" />
     </history-entry>
@@ -663,18 +648,9 @@
     <history-entry file="StatusTest - 2019.05.21 at 19h 42m 42s.xml">
       <configuration name="StatusTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConnectionClassTest - 2019.05.21 at 19h 52m 15s.xml">
-      <configuration name="ConnectionClassTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ClientRepositoryTest - 2019.05.21 at 19h 55m 07s.xml">
-      <configuration name="ClientRepositoryTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EmployerRepositoryTest - 2019.05.21 at 19h 56m 47s.xml">
-      <configuration name="EmployerRepositoryTest" configurationId="JUnit" />
-    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147820000" />
+    <option name="totallyTimeSpent" value="147062000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-27" y="45" width="1940" height="954" extended-state="0" />
@@ -687,7 +663,7 @@
       <window_info id="Learn" order="4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.22677925" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2457421" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2457421" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -742,12 +718,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JavaFX/connector/connector.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="466">
           <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="38" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BaseFileChooser.java" />
     <entry file="file://E:/Java/Java_Learn/DatabaseLearn/src/calendar/components/JLocaleChooser.java">
@@ -768,24 +744,51 @@
     <entry file="file://$PROJECT_DIR$/src/JavaFX/selectDate/formSelectDate.fxml" />
     <entry file="file://$PROJECT_DIR$/src/JavaFX/selectDate/ControllerSelectDate.java" />
     <entry file="file://$PROJECT_DIR$/src/JavaFX/listClaims/listClaims.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="503">
           <caret line="37" column="135" selection-start-line="37" selection-start-column="135" selection-end-line="37" selection-end-column="135" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JavaFX/claim/sample.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Java/objects/LearnTest.groovy" />
     <entry file="file://$PROJECT_DIR$/src/Java/objects/Learn.java" />
-    <entry file="file://$PROJECT_DIR$/src/tests/JavaFX/claim/ControllerTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/tests/Java/repositories/StatusRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/Java/repositories/EmployerRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/Connection/ConnectionClassTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/JavaFX/claim/ControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Java/objects/Employer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7">
@@ -797,6 +800,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/Java/repositories/ClaimRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/Java/repositories/ClientRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -950,70 +970,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/JavaFX/MainTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/Java/objects/StatusTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/Connection/ConnectionClassTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/Java/repositories/ClientRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/Java/repositories/EmployerRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/Java/repositories/ClaimRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/JavaFX/MainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="99" column="53" lean-forward="true" selection-start-line="98" selection-start-column="8" selection-end-line="99" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/Java/repositories/StatusRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -33,7 +33,6 @@ public class ControllerListClaims {
     @FXML TableColumn<Claim, String> client;
     @FXML TableColumn<Claim, String> status;
     @FXML TableColumn<Claim, String> description;
-    @FXML private Button buttonSelectedRow;
     @FXML private Label labelMessage;
     @FXML private  DatePicker dateStart;
     @FXML private DatePicker dateEnd;
@@ -65,18 +64,12 @@ public class ControllerListClaims {
 
     }
 
-
-    public void getListClaims(){
-
-    }
-
     @FXML private void returnFormClaim(){
         labelMessage.setText("");
         FormControl.getListClaimsForm().close();
         FormControl.getClaimForm().show();
     }
     @FXML private void createReportClaims(){
-     //   new FormControl().runSelectDateForm();
 
         if (dateStart.getValue()==null) {
             labelMessage.setText("Введите начальную дату");
@@ -93,8 +86,6 @@ public class ControllerListClaims {
         {
 
             ArrayList<Claim> claimList = ClaimRepository.getClaimList();
-          //  LocalDate dateBegin = FormControl.getDataBegin();
-           // LocalDate dateEnd = FormControl.getDataEnd();
             writer.write("Отчет по заявкам"+ "\n");
             List<Claim> claimListFilterDate = claimList.stream().filter((claim)->{
                 return ((LocalDate.parse(claim.getDateTime().substring(0,10)).isAfter(dateStart.getValue())&
